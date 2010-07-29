@@ -1,0 +1,23 @@
+Poor man's java performance analysis:
+
+1. Set up a script to issue "kill -3" to your production java server every 10 
+   seconds or so. This generates thread dumps in the log file.
+
+2. Run the log file through the thread_dump.rb script: 
+   "ruby thread_dump.rb log_file intermediate_file"
+
+3. Run the intermediate file from step 2 through thread_graph.rb: 
+   "ruby thread_graph.rb intermediate_file output_file.dot"
+
+4. Run the dot file from step 3 through graphviz's dot: 
+   "dot -Tpdf output_file.dot -o output_file.pdf"
+
+There are some constants at the beginning of threaddump.rb and threadgraph.rb 
+to determine which stack traces are included, which stack frames are skipped, 
+which branches are graphed, and what colors are used. This is helpful if
+your thread dumps contain too much data for a single graph.
+
+There is also script to generate a simple csv file via the intermediate file:
+"ruby thread_csv.rb intermediate_file output_file.csv"
+
+Tested with ruby 1.8.6 and thread dumps from Sun/Oracle's JVM.

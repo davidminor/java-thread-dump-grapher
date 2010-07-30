@@ -21,3 +21,6 @@ There is also script to generate a simple csv file via the intermediate file:
 "ruby thread_csv.rb intermediate_file output_file.csv"
 
 Tested with ruby 1.8.6 and thread dumps from Sun/Oracle's JVM.
+
+This project is licensed under the Apache License 2.0. See LICENSE for
+details.

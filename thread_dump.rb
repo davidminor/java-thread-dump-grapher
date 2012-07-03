@@ -5,7 +5,7 @@ STACK_INCLUSION = // #always matches
 # /springframework\.aop|TransactionInterceptor|\$Proxy\d+\..*Unknown Source|java\.lang\.reflect|sun\.reflect/
 ELIDE_FRAME = /a^/ #never matches
 
-require 'java_stack'
+require './java_stack'
 
 if ARGV.length != 2
   puts "ruby thread_dump.rb logfile_input marshal_output_file_name"

@@ -8,7 +8,7 @@ MIN_BRANCH_COUNT = 8
 # frame colors for matching frames (e.g.: { /java\.lang/ => "red", /java\.math/ => "#0000FF" })
 COLORS = {}
 
-require 'java_stack'
+require './java_stack'
 
 if ARGV.length != 2
   puts "ruby thread_graph.rb marshal_input_file output_file.dot"

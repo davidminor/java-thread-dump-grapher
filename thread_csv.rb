@@ -1,5 +1,5 @@
 #Creates a simple csv with stack frames sorted by overall count, and their branches listed in the same row
-require 'java_stack'
+require './java_stack'
 
 if ARGV.length != 2
   puts "ruby thread_csv.rb marshal_file output_file.csv"
